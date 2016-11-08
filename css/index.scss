@@ -1,0 +1,303 @@
+$width:320px 360px 375px 412px 414px 750px;
+html{
+    font-size: 100px;
+}
+$color:#668964;
+body{
+    font-size: 16px;
+    background:white;
+}
+*{
+    padding: 0;
+    margin:0;
+    list-style: none;
+    box-sizing: border-box;
+    font-family:"微软雅黑","宋体",sans-serif;
+    letter-spacing: 1px;
+}
+
+$shiji-width:750px;
+@each $i in $width{
+    @media screen and (min-width: #{$i}){
+        html{
+            font-size:100px * $i / $shiji-width;
+            
+        }
+    }
+}
+.icon{
+    font-family:"iconfont";
+}
+@mixin top-bottom{
+    position: relative;
+    top: 0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin:auto;
+}
+@mixin top{
+    position: absolute;
+    top: 0;
+    bottom:0;
+    margin:auto;
+}
+.box{
+    width:100%;
+    height:13.34rem;
+    background: url(../images/IMG_0048.JPG);
+    background-size:cover;
+}
+.gd{
+    width:100%;
+    position: fixed;
+    padding:2rem 0;
+    top:2rem;
+    left:0rem;
+    line-height:4rem;
+    text-align: center;
+    color:#969896;
+    font-size: 4rem;
+    opacity: 0.7;
+    background:url(../images/5.jpg)0 2rem;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: none;
+    .gdzi{
+        width:100%;
+        font-size: 18px;
+        margin-top:4rem;
+    }
+}
+
+.main{
+   
+    z-index: 2;
+    display: block;
+    width:5rem;
+    height:5rem;
+    border-radius: 10%;
+    @include top-bottom;
+    top:3rem;
+    background:url(../images/11.png);
+    background-size: cover;
+   
+    .yuan{
+        width:3rem;
+        height:1rem;
+        background:$color;
+        color:white;
+         line-height: 1rem;
+         text-align: center;
+        font-size: 22px;
+        position: absolute;
+        left:0;
+        right:0;
+        margin:auto;
+        bottom:-2rem;
+        z-index: 1;
+    }  
+   
+}
+
+   .header{
+    width: 100%;
+    height: 1rem; 
+    padding:0.2rem 0.3rem;
+    position: relative;
+    display: none;
+    text-align: center;
+    color:white;
+    line-height: 0.6rem;
+    font-size: 18px;
+    background:$color;
+   
+    .zhezhao{
+        position: absolute;
+        left:0;
+        top:0;  
+        width:100%;
+        height:13rem;
+        background:#333;
+        opacity: 0.7;
+        z-index: 17;
+        
+    }
+    input{
+        position: absolute;
+        left:0;
+        right:0;
+        margin:auto;
+        top:6rem;
+        width:80%;
+        height:1.6rem;
+        background:white;
+        border:0;
+        border-radius: 5%;
+        line-height: 0.8rem;
+        font-size:22px;
+        z-index: 17;
+    }
+    .add{
+       position: absolute;
+        left:0;
+        right:0;
+        margin:auto;
+        top:8rem;
+        width:30%;
+        height:1rem;
+        background:white;
+        border:0;
+        border-radius: 5%;
+        line-height: 1rem; 
+        background: $color;
+        color:white;
+        text-align: left;
+        font-size: 24px;
+        border:1px solid white;
+        border-radius: 8%;
+        text-align: center;
+        z-index: 17;
+    }
+     .return{
+        
+        height:0.5rem;
+        @include top;
+       left:0.4rem;
+        color:white;
+        line-height: 0.5rem;
+        text-align: center;
+        font-size: 16px;
+        span{
+            margin-right:2px;
+        }
+    }
+    .add1{
+        width:0.5rem;
+        height:0.5rem;
+        @include top;
+        right:0.4rem;
+        color:white;
+        line-height: 0.5rem;
+        text-align: center;
+        font-size: 18px;
+    }
+    
+}
+#ul{
+    margin-top:0.2rem; 
+    width:100%;
+    overflow: hidden;
+    li{
+    width: 100%;
+    height: 1rem;
+    padding:0.2rem 0.3rem;
+    background:white;
+    line-height:1rem;
+    position: relative;
+    margin-bottom: 0.2rem;
+    color:#333;
+   span{
+       margin-right:2px;
+       display: inline-block;
+       width: .55rem;
+       height:.55rem;
+       background: url(../images/44.png);
+       background-size: cover;
+       vertical-align: middle;
+       
+   }
+    .content{
+        width:100%;
+        height:0.6rem;
+        border:0;
+        border-radius: 5%;
+        line-height: 0.6rem;
+    }
+    .delete{
+        width:1.4rem;
+        height:0.7rem;
+        background: $color;
+        @include top;
+        right:0.4rem;
+        color:white;
+        line-height: 0.7rem;
+        text-align: center;
+        display: none;
+    }
+    
+   }
+   .done .content{
+//      text-decoration: line-through;
+//      color:#eee;
+    }
+    @keyframes aa{
+      0%{
+        right:-1.4rem;  
+      }
+      100%{
+          right:0.4rem;
+      }
+    }
+    .move{
+        animation:aa 0.4s linear 0s 1  forwards;
+    }
+    .done .delete{
+        display: block;
+       
+    }
+    .done span{
+       background: url(../images/33.png);
+       background-size: cover;
+       vertical-align: middle;
+       background-repeat: no-repeat;
+    }
+}
+.footer{
+    width:100%;
+    height:1rem;
+    display: none;
+    border-radius: 10%;
+    margin:0 auto;
+    div{
+        width:33.3%;
+        height:1rem;
+        background:white;
+        border:1px solid #eee;  
+        float: left;
+        color:$color;
+        text-align: center;
+        line-height: 1rem;
+    }
+}
+.list{
+    position: fixed;
+    bottom:0.6rem;
+    right:0.3rem;
+    width:1rem;
+    height:1rem;
+    background: url(../images/66.png);
+    background-size: 90%;
+    background-repeat: no-repeat;
+    #clear{
+        width:3rem;
+        height:2rem;
+        overflow: hidden;
+        border-radius: 2%;
+        background: white;
+        position:absolute;
+        right:0;
+        bottom:1rem;
+        padding:0 .3rem;
+        border:1px solid #eee;
+        div{
+            width:100%;
+            height:1rem;
+            line-height: 1rem;
+        }
+        .clear{
+            border-bottom:1px solid #eee;
+        }
+    }
+}
+
